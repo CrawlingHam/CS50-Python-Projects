@@ -1,0 +1,701 @@
+                              EN MÄNG OLIKA PROJEKT
+
+
+____________________________________________
+ # Projektnamn: Jämt eller udda
+
+
+     Inmatning från användaren
+heltal = float(input("Ange heltal: "))
+
+    # Jämn eller udda
+#if heltal % 2 == 0:
+ #   print(heltal % 2)
+  #  print("jämn")
+#else:
+  #  print("udda")
+  #  print(heltal % 2)
+ 
+_________________________________________
+
+          #Projektnamn: Fakultet
+
+
+     Input från användaren
+n = int(input("Ange ett positivt heltal: "))
+
+
+n_fakultet = 1
+
+for i in range(1, n+1):
+    n_fakultet *= i
+
+print(n_fakultet)
+
+____________________________________
+
+            #Projektnamn: Klockslag
+
+ Antal klockslag
+n = 40
+
+ Variabler för summa och räknare
+summa = 0
+i = 0
+
+ Så länge summan är mindre än klockslagen
+while summa < n:
+    i += 1 # Höja räknaren med ett
+    summa += i # addera summan med räknaren
+
+ Skriver ut tiden och hur antal klockslag
+print(i, summa)
+
+#Ex:
+    # 0 + 1 
+    # 1 + 2
+    # 3 + 3
+    # 6 + 4
+
+_________________________________________________
+
+
+     #Projektnamn: Vilket tal tänker jag på?
+
+import random
+
+ Generera slumpmässigt tal
+random_num = random.randint(1, 20)
+
+guess = int(input("Gissa talet:"))
+
+ Vilkor för rätt / fel gissning
+
+while guess != random_num:
+    guess = int(input("Gissa talet:"))
+    if guess == random_num:
+        break
+print(f"{guess} is correct")
+
+
+_____________________________________________________
+  
+
+
+amount_due = 50
+
+def calculated(coin_input):
+
+    while amount_due > 0:
+        print(f"Amount Due: {amount_due}")
+
+        coin_input = int(input("Insert coin: "))
+
+        if coin_input in [5, 10, 25,50]:
+            amount_due -= coin_input
+
+    return amount_due
+
+
+
+
+def main():
+
+    print("Amount due: 50")
+
+    coin_input = int(input("Insert coin: "))
+
+    change_owed = abs(amount_due)
+    print(f"Change Owed: {change_owed}")
+
+
+
+
+if __name__ == '__main__':
+    main()
+_____________________________________________________________
+
+     #Projektnamn: james bond
+
+förnamn = str(input("Förnamn: "))
+efternamn = str(input("Efternamn: "))
+
+namn = förnamn + ' ' + efternamn
+
+splittrad = namn.split(' ')
+
+print(f"I am {splittrad[1]}, {namn}")
+
+
+
+
+        # Exempel (psuedo-kod)
+'''
+slå ihop förnamn och efternamn + lägg till mellanslag
+    splittra strängen från mellanslaget
+
+    ex:
+    förnamn = mycheal       efternamn = dycheal
+        namn = förnamn + '' + efternamn
+            mychealdycheal
+        splittrad = namn.split('')
+
+    print(f"I am {splittrad[0}, {namn}")
+'''
+        
+____________________________________________________________
+
+            #Projektnamn: Viskleken
+
+
+ord = str(input("Ord: "))
+   
+vokaler = "aeiouåäöy"
+
+    # hitta vokaler
+for char in ord: # iterera genom strängen
+    if char in vokaler:   # om karaktären i strängen är en vokal
+        print('*', end='')   # byt ut karaktären med en asterisk (*)
+    else:
+        print(char, end='') # ändra ej på karaktären  
+print()
+
+
+
+            # exempel (psuedo-kod)
+
+
+    vokaler = "aeiouåäöy"
+
+        ord = "hello"
+
+    # hitta vokaler
+for char in ord: # iterera genom strängen
+    if char in vokaler:   # om karaktären i strängen är en vokal
+        print('*', end='')   # byt ut karaktären med en asterisk (*)
+        
+        
+
+'''
+
+___________________________________________________________
+
+            #Projektnamn: Avstavning
+
+ordset = input("Ett ord: ")
+
+tom_ord = ''
+
+for i in range(len(ordset)-1): # för varje karaktärs index i strängen förutom den sista karaktären
+    tom_ord += ordset[i] + '-' 
+tom_ord += ordset[-1]
+print()
+
+        # psuedo kod
+
+
+        ord = stamma
+
+iterera över strängen och lägg till bindestreck mellan bokstav (-)
+
+
+        bindestreck = s-t-a-m-m-a
+        inget bindestreck efter det sista karaktären
+
+
+
+
+
+
+__________________________________________________________________________________
+
+import sys
+
+def handle_longest(string):
+    
+    hashmap = {}
+    longest = 0
+    for i in range(len(string)):
+        if string[i] not in hashmap:
+            hashmap[string[i]] = len(string[i])
+
+    for i in range(len(string)):
+        if len(string[i]) >= longest:
+            longest = len(string[i])
+        
+    return longest
+
+def main():
+    string = input("Enter string: ")
+    # Om strängen är tom, skriv ut felmeddelande
+    if string == '':
+        print("Skriv minst ett ord.")
+        sys.exit()
+    res = handle_longest(string)
+    print(res)
+
+if __name__ == '__main__':
+    main()
+
+
+def find_longest_pos(string):
+    longest_word = ''
+    
+    # Last occurence of the word with the same length
+    last_occurence = None
+    
+    # split the string into a list 
+    words = string.split()
+
+    # iterate though every word and index in the string
+    for i, word in enumerate(words):
+        
+        # if the length of the word is longer than the current longest word
+        if len(word) >= len(longest_word):
+            
+            # update the current longest word 
+            longest_word = word
+            
+            # update the position of the current longest word
+            last_occurence = i
+
+        # return longest_word and last occurence
+    return last_occurence, longest_word
+
+
+
+
+
+str longest = '';
+bool    lastOccurence = none;
+
+
+var words = yourString.Split(" ");
+
+foreach (var word in words) 
+{
+  // No index for this option
+}
+
+for (var i = 0; i < words.Length; i++) 
+{
+  var word = words[i];
+  // Pretty much the same as your python example
+}
+
+
+        -- vibrationsbredd
+         
+def handler(lst):
+    return max(lst) - min(lst)
+
+def main():
+    lst = [5, 1, 0, -2, 9, -3, 1, 12]
+    res = handler(lst)
+    print(res)
+
+
+if __name__ == '__main__':
+    main()
+
+
+            --Rövarspråket
+
+def handler(s):
+
+    kon = 'bcdfghjklmnpqrstvwxz'
+    return ''.join([c * 2 if c in kon else c for c in s])
+
+            
+
+s = 'lmao hello bro what'
+res = handler(s)
+print(res)
+
+
+
+def handler(lst1, lst2):
+    
+
+
+lst1 = [3, 1, 4, 2]
+lst2 = [9, 6, 7, 5, 8]
+res = handler(lst1, lst2,)
+print(res)
+
+
+
+def handler(tal, lsta):
+
+    for i in range(len(lsta)):
+        lsta[i] *= tal
+
+    return lsta
+
+lsta = [1, 2, 3, 4, 5 ,6, 7, 8, 9]
+tal = int(input("E: "))
+res = handler(tal, lsta)
+print(res)
+
+
+
+def lol(head):
+    return head == head[::-1]
+
+head = [1,2,2,1]
+brain = [1,2]
+print(lol(brain))
+
+
+
+
+def flip_case(string):
+
+    new = [''.join([
+        
+            char.lower() if char.isupper() 
+            else char.upper() if char.islower()
+            else char
+            for char in word]) 
+            for word in string
+          ]
+
+    new2 = ' '.join(new)
+    count = 0
+    
+    for word in new2:
+        for char in word:
+            count += 1
+
+    return count, new2
+
+string = input("Enter a string: ").split()
+
+count, new2 = flip_case(string)
+print(f"{count}\n {new2}")
+'''
+
+
+
+def world_matrix(word):
+
+    outer_lst = []
+
+    leng = len(word)
+
+    for i in range(leng):
+
+        inner_lst = ['_'] * leng
+
+        outer_lst.append(inner_lst)
+
+    for i in range(leng):
+
+        outer_lst[i][i] = word[i]
+
+    return outer_lst
+
+
+word = input("Enter a string: ")
+res = world_matrix(word)
+
+for row in res:
+    print(''.join(row))
+
+_________________________________________
+
+      # Projektnamn:  chirstmas.py
+
+dagar_i_månad = {
+            'november': 30,
+            'december': 31
+    }
+
+månad_som_siffra = {
+            'november': 11,
+            'december': 12
+    }
+
+# Julafton dag
+julafton = 24
+
+# Användar-input 
+dag = int(input("Dag: "))
+månad = input("Månad: ").lower()
+
+
+if månad == 'december':
+    res = julafton - dag
+    if res == 1:
+        print(f"Det är {res} dag kvar till julafton.")
+    elif res > 1:
+        print(f"Det är {res} dagar kvar till julafton.")
+
+
+# If the month is november
+elif månad == 'november':
+
+    # Find out how many months away from december
+    månader_kvar = månad_som_siffra['december'] - månad_som_siffra['november']
+
+    # Convert months to days (multiply number of months with 30,417)
+    dagar_kvar = round(månader_kvar * 30,417)
+
+    # Find the day difference by subtracting
+    difference = julafton - dag
+
+    # Add {dagar_kvar} to {difference} and print result
+    res = dagar_kvar + difference
+    print(f"Det är {res} dagar kvar till julafton.")
+
+_________________________________________________________
+
+        #Projectnamn: flip cases
+
+
+def flip_case(sträng):
+    
+    new = [''.join([
+        
+            char.lower() if char.isupper() 
+            else char.upper() if char.islower()               else char 
+            for char in word]) 
+            for word in sträng
+          ]
+    
+    res = ' '.join(new)
+    
+    count = 0
+    
+    for word in res:
+        for char in word:
+            count += 1
+            
+    return res, count
+     
+
+sträng = input("E: ").split()
+count, res = flip_case(sträng)
+print(f"{res}\n{count}")
+
+
+'''
+
+  >>>>>>  Testcase #1   <<<<<
+Input: oNCe THeRe WAS A dOG
+Output: 20
+Output: OncE thErE was a Dog
+
+
+  >>>>>>  Testcase #2   <<<<<
+Input: PanCakes aRe gOOD wiTh JaM
+Output: 26
+Output: pANcAKES ArE Good WItH jAm
+
+'''
+____________________________________________________
+
+              #Projectnamn: sales.py
+
+
+import json
+
+def handle_car_data():
+    filename = input("Filename: ")
+    while not (filename.endswith(".json")) or (filename.startswith(".json")):
+        filename = input("Filename: ")
+
+    # open cars.json file and read from it 
+    with open('cars.json', 'r') as file:
+        # load the data from car.json
+        car_data = json.load(file)
+
+    while True:
+
+        item = input("Item: ")
+        count = input("Count: ")
+        
+        # if item or count are empty
+        if item == '' or count == '':  
+            # return json file 
+            return car_data 
+    
+        # If car is not in json file
+        if item not in car_data:
+            # Set the count(value) of the car to 0
+            car_data[item] = 0
+            # Increase car count if count > 0
+        car_data[item] += int(count)  
+                
+    return car_data
+            
+
+def main():
+    res = handle_car_data()
+    print(res)
+    
+
+if __name__ == '__main__':
+    main()
+______________________________________________________
+
+                #Projektnamn: Increasing.py
+
+
+import re
+
+def max_so_far (nums):
+    # Filtera ut mellanslag och kommatecken, och skapa en lista
+    splitted = re.split("[ ,]", nums)
+    stripped = [int(char) for char in splitted if char.isdigit()]
+
+    # Nuvarande största talet blir det största talet i listan
+    largest = int(stripped[0])
+
+    # Iterera genom listan
+    for i in range(1, len(stripped)):
+    # Om nuvarande värde är större än det största talet
+        if stripped[i] > largest:
+        # Största tal uppdateras till att vara det nuvarande värdet
+            largest = stripped[i]
+    # Om nuvarande värde är mindre än eller lika med det största talet
+        else:
+        # Nuvarande talet uppdateras till att vara det största talet
+            stripped[i] = largest
+
+    return stripped
+
+
+def main():
+    nums = input("Enter numbers: ")
+    res = max_so_far (nums)
+    print(res)
+
+if __name__ == '__main__':
+    main()
+
+_________________________________________________________________________
+
+                  #Projektnamn: vowels
+
+
+import sys
+
+def handle_vowels(string):
+
+ # Splittra strängen till en lista
+    words = string.split()
+
+ # Definiera vokaler
+    vowels = 'aeiouAEIOUåäöÅÄÖ'
+    
+ # Skapa en tom lista
+    new_list = []
+
+  # Iterera genom listan
+    for i in range(len(words)):
+        
+    # Återställ räknaren till 0 efter varje iteration
+        vowel_count = 0
+
+    # För varje karaktär i ett ord
+        for char in words[i]:
+
+        # Öka räknaren med 1 om karaktären är en vokal
+            if char in vowels:
+                vowel_count += 1
+
+    # Lägg till ordet till en ny lista om den har jämna vokaler
+        if vowel_count % 2 == 0:
+            new_list.append(words[i])
+
+     # Returnera en lista av ord som har en jämn mängd vokaler
+    return new_list
+
+
+def main():
+    string = input("Enter words separated by spaces: ")
+
+    # Skriv ut felmeddelande och avsluta program om strängen är tom
+    if len(string) == '':
+        print("Must enter at least 1 word")
+        sys.exit()
+
+    # Kalla funktionen och skriv ut resultatet
+    res = handle_vowels(string)
+    print(res)
+
+
+if __name__ == '__main__':
+    main()
+
+  ________________________________________________
+
+          #Projektnamn: longest.py
+
+
+
+def find_longest_pos(sträng):
+    longest = ''
+    last_occurence = None
+    for i in range(len(sträng) - 1):
+        current_char = sträng[i]
+        next_char = sträng[i + 1]
+        if len(current_char) > len(next_char):
+            longest = str(i)
+        elif len(current_char) < len(next_char):
+            longest = str(i+1)
+        elif current_char == next_char and len(current_char) == len(next_char):
+            last_occurrence = len(sträng) - 1 - sträng[::-1].index(current_char)
+            
+    return longest, last_occurence
+
+
+def main():
+    sträng = input("Sträng: ").split(" ")
+    last_occurence, longest = find_longest_pos(sträng)
+    if last_occurence is not None:
+        print(last_occurence)
+    else:
+        print(longest)
+
+
+if __name__ == '__main__':
+    main()
+______________________________________________________________________________
+
+                #Projektnamn: biljetter.py
+
+
+
+def find_longest_pos(sträng):
+    longest = ''
+    last_occurence = None
+    for i in range(len(sträng) - 1):
+        current_char = sträng[i]
+        next_char = sträng[i + 1]
+        if len(current_char) > len(next_char):
+            longest = str(i)
+        elif len(current_char) < len(next_char):
+            longest = str(i+1)
+        elif current_char == next_char and len(current_char) == len(next_char):
+            last_occurrence = len(sträng) - 1 - sträng[::-1].index(current_char)
+            
+    return longest, last_occurence
+
+
+def main():
+    sträng = input("Sträng: ").split(" ")
+    last_occurence, longest = find_longest_pos(sträng)
+    if last_occurence is not None:
+        print(last_occurence)
+    else:
+        print(longest)
+
+
+if __name__ == '__main__':
+    main()
+
+________________________________________________________
+
+
